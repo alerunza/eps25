@@ -122,3 +122,32 @@ Quindi P ( Y > 1 ):
 
 > 1 - pnorm(1,0,2)
 [1] 0.3085375
+
+| Sia X una variabile aleatoria distribuita come una Normale di parametri μ=3 e σ2=1. Sia Y una variabile aleatoria distribuita come una Normale standard, indipendente da X.
+Determinare:
+
+1 La probabilità che entrambe le variabili aleatorie siano maggiori della propria media.
+
+> x<-1-pnorm(3, 3, 1)
+> y<-1-pnorm(0, 0, 1)
+> x*y
+[1] 0.25
+
+2 La probabilità che X sia compresa fra -1 e 0 sapendo che Y è maggiore di 7.
+
+> pnorm(0, 3, 1)-pnorm(-1, 3, 1)
+[1] 0.001318227
+
+3 La probabilità che X sia minore di 2.5 oppure che Y sia maggiore di -1, sapendo che Y è maggiore di -2.
+
+> oppure <- pnorm(2.5,3,1) + (1 - pnorm(-1,0,1)) / (1 - pnorm(-2,0,1))
+> result <- oppure - pnorm(2.5,3,1) * ((1 - pnorm(-1,0,1)) / (1 - pnorm(-2,0,1)))
+> round(result, 4)
+[1] 0.9038
+
+4 La probabilità che X sia minore di 7 sapendo che (X+1) è maggiore di 6.
+
+num <- pnorm(7,3,1) - pnorm(5,3,1)
+den <- 1 - pnorm(5,3,1)
+num / den
+[1] 0.9986079
