@@ -1,0 +1,124 @@
+| Sia X una variabile aleatoria distribuita come una Normale di media 0 e varianza 4
+Determinare:
+
+1 La probabilità che X sia minore di 1.5. Risposta 1 Domanda 27
+ 
+> pnorm(1.5, 0, 2)
+[1] 0.7733726
+
+2 La probabilità che X sia maggiore di 3. Risposta 2 Domanda 27
+
+> 1-pnorm(3, 0, 2)
+[1] 0.0668072
+
+3 La probabilità che X sia compresa fra -2 e 1.
+
+> pnorm(1, 0, 2)-pnorm(-2, 0, 2)
+[1] 0.5328072
+
+4 La probabilità che X sia maggiore di 3 sapendo che X è minore di 6. Risposta 3 Domanda 27
+
+> x6<-pnorm(6, 0, 2)
+> x3<-pnorm(3, 0, 2)
+> (x6-x3)/x6
+[1] 0.06554578
+
+| Sia X una variabile aleatoria distribuita come una Normale di media 2 e varianza 4. Sia Y una variabile aleatoria distribuita come una Normale standard, indipendente da X.
+Determinare:
+
+1 La probabilità che X sia maggiore di 3.
+
+> 1-pnorm(3, 2, 2)
+[1] 0.3085375
+
+2 La probabilità che entrambe le variabili aleatorie siano maggiori di 3.
+
+> x<-(1-pnorm(3, 2, 2))
+> y<-(1-pnorm(3, 0, 1))
+> x*y
+[1] 0.0004164942
+
+3 La probabilità che X sia minore di 7 sapendo che X è maggiore di 6.
+
+> x6->(1-pnorm(6, 2, 2))
+> ((pnorm(7, 2, 2))-(pnorm(6, 2, 2)))/x6
+[1] 0.7270493
+
+| Sia X una variabile aleatoria distribuita come una Normale di media 10 e varianza 16.
+Determinare:
+
+1 La probabilità che X sia maggiore di 13.
+
+> 1-pnorm(13, 10, 4)
+[1] 0.2266274
+
+2 La probabilità che X sia compresa fra 8.5 e 12.
+
+> pnorm(12, 10, 4)-pnorm(8.5, 10, 4)
+[1] 0.3376322
+
+3 La probabilità che X sia minore di 8.5 oppure maggiore di 12 sapendo che X è maggiore di 8.
+
+> x_oppure <- pnorm(8.5, 10, 4)+(1-pnorm(12, 10, 4))
+> (x_oppure - pnorm(8, 10, 4))/(1-pnorm(8, 10, 4))
+[1] 0.5117129
+
+4 La probabilità che X sia minore di 7 sapendo che X è maggiore di 6. Risposta 4 Domanda 31
+
+> (pnorm(7, 10, 4)-pnorm(6, 10, 4))/(1-pnorm(6, 10, 4))
+[1] 0.08078983
+
+| Sia X una variabile aleatoria distribuita come una Normale di media 2 e varianza 4. Sia Y una variabile aleatoria distribuita come una Normale standard, indipendente da X.
+Determinare:
+
+1 La probabilità che X sia compresa fra 1.5 e 2 sapendo che Y è maggiore di 7. Risposta 3 Domanda 33
+
+> x_compresa<-pnorm(2, 2, 2)-pnorm(1.5, 2, 2)
+> x_compresa
+[1] 0.09870633
+(e qui ignoriamo la condizionata Y 7, perchè standard e sarebbe stato 1-pnorm(7, 0, 1) x definizione perè equivale a circa 2. quindi 1-1=0 e la ignoro)
+
+2 La probabilità che X sia minore di 7 sapendo che X è maggiore di 6.
+
+> (pnorm(7, 2, 2)-pnorm(6, 2, 2))/(1-pnorm(6, 2, 2))
+[1] 0.7270493
+
+| Sia X una variabile aleatoria distribuita come una Normale di media 0.2 e varianza 1. Sia Y una variabile aleatoria distribuita come una Esponenziale di parametro ('rate') pari a 1, indipendente da X.
+Determinare:
+
+1. La probabilità che Y sia maggiore di 2.
+
+> 1-pexp(2, 1)
+[1] 0.1353353
+
+2. La probabilità che almeno una delle due variabili aleatorie sia maggiore di 2.
+
+TEORIA: 1 - P("tutte e due minori di 2") = 1 - P(X < 2) x P(Y < 2)
+> 1 - (pnorm(2,0.2,1) * pexp(2,1))
+[1] 0.166403
+
+3. La probabilità che al massimo una delle due sia maggiore di 1.
+
+> 1 - (1 - pnorm(1,0.2,1)) * (1 - pexp(1,1))
+[1] 0.9220628
+
+| Siano X1,X2,X3 tre variabili aleatorie indipendenti e identicamente distribuite, con distribuzione Normale di media 0.2 e varianza 1.
+Determinare:
+
+1. La probabilità che X_2 sia maggiore di 2.
+
+> 1-pnorm(2, 0.2, 1)
+[1] 0.03593032
+
+2. La probabilità che almeno una delle tre variabili aleatorie sia maggiore di 1.
+
+> 1-(pnorm(1, 0.2, 1)*pnorm(1, 0.2, 1)*pnorm(1, 0.2, 1))
+[1] 0.5104267
+
+3. La probabilità che Y = 2X_2 − 0.4 sia maggiore di 1.
+
+Y ha distribuzione Normale di media 0 e varianza 4.
+Quindi P ( Y > 1 ):
+
+> 1 - pnorm(1,0,2)
+[1] 0.3085375
