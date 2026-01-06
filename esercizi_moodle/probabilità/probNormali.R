@@ -95,3 +95,26 @@ round(pnorm(2.5, 2, 1) + (1 - pnorm(3, 2, 1)) - pnorm(2.5, 2, 1), 4)
 round((pnorm(3.5, 2, 1) - pnorm(1.7, 2, 1)) / pnorm(3.5, 2, 1), 4)
 [1] 0.5906
 
+
+# Sia Y una variabile aleatoria Normale standard e sia X = Y + 2.
+# Determinare:
+
+# 1 il valore atteso di X
+# 2 Ph({X <= 2.5} U {X > 3})
+# 3 La probabilità che X sia maggiore di 1.7 sapendo che X è minore di 0.
+
+# soluzione:
+
+#1
+2 + 0 # E(X) = E(Y) + 2  e E(Y) = 0 per variabile normale standard
+[1] 2
+
+#2
+pnorm(2.5, 0, 1) + (1 - pnorm(3 - 2, 0, 1))
+round(pnorm(2.5, 0, 1) + (1 - pnorm(3 - 2, 0, 1)) - pnorm(2.5 - 2, 0, 1), 4)
+[1] 0.1587
+
+#3 probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+(1 - pnorm(1.7, 2, 1)) / (1 - pnorm(1, 2, 1))
+round((1 - pnorm(1.7, 2, 1)) / (1 - pnorm(1, 2, 1)), 4)
+[1] 0.7344
