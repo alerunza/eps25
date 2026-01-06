@@ -152,3 +152,41 @@ num <- pnorm(7,3,1) - pnorm(5,3,1)
 den <- 1 - pnorm(5,3,1)
 num / den
 [1] 0.9986079
+
+
+t.test(dati$time_new_version, dati$time_old_version, alternative = "less", paired = TRUE)
+
+
+| Sia Y una variabile aleatoria Normale standard e sia X = Y + 2.
+Determinare:
+
+1. Il valore atteso (=media) di X: 2 => pk media di y strd è 0 -> sostituiamo nella equazione data e risulta 0+2=2.
+
+2. P({X <= 2.5} U {X > 3}):
+> pnorm(2.5,2,1) + (1 - pnorm(3,2,1)) = 0.8501
+
+4. La probabilità che X sia maggiore di 1.7 sapendo che X è maggiore di 1 Risposta 3 Domanda 43
+> (1 - pnorm(1.7,2,1)) / (1-pnorm(1,2,1)) =  0.7344
+
+Sia X una variabile aleatoria continua distribuita come una Uniforme sull intervallo  [2,10] .
+Determinare:
+
+1 La probabilità che X sia minore della sua media.
+
+
+
+2 La probabilità che X sia maggiore di 3.
+
+3 La probabilità che X sia compresa fra -2 e 3.
+
+4 La probabilità che X sia maggiore di 3 sapendo che X è minore di 6.
+
+
+Comandi di R che potrebbero essere utili: punif, dunif
+
+STATISTICA
+
+frequenza e relativa:
+> table(ristorante$fascia_oraria=="Pranzo", useNA="always")
+> freq.rel. = freq./tot oss.
+> table(ristorante$fascia_oraria[ristorante$categoria_piatto=="Piatti vegetariani"]=="Pranzo", useNA="always")
