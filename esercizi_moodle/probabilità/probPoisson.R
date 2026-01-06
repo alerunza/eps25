@@ -50,3 +50,33 @@ round(ppois(7, 1) - ppois(0.5, 1), 4)
 round((dpois(1, 1) + dpois(2, 1) + dpois(3, 1) + dpois(4, 1)) / (1 - dpois(0, 1)), 4)
 [1] 0.9942
 
+#Sia Y una variabile aleatoria di poisson di parametro 2.
+
+# determinare:
+
+# 1 P(Y = 1.5)
+# 2 P(Y <= 2)
+# 3 P(Y appartiente [5, 10]) NB: attenzione agli estremi
+
+# soluzione:
+
+#1
+# nelle variabili aleatorie discrete non possono esserci probabilità puntuali
+# quindi P(Y = k) = 0 per ogni k non intero
+0
+
+#2
+ppois(2, 2)
+round(ppois(2, 2), 4)
+[1] 0.6767
+
+# oppure
+dpois(0, 2) + dpois(1, 2) + dpois(2, 2)
+round(dpois(0, 2) + dpois(1, 2) + dpois(2, 2), 4)
+[1] 0.6767
+
+#3
+# da 5 a 10  equivale a P(X ≤ 10) - P(X ≤ 4)
+ppois(10, 2) - ppois(4, 2)
+round(ppois(10, 2) - ppois(4, 2), 4)
+[1] 0.0526
