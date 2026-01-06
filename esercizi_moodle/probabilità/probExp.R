@@ -99,3 +99,35 @@ round(pexp(3, 2) - pexp(2, 2), 4)
 (pexp(7, 2) - pexp(6, 2)) / (1 - pexp(6, 2))
 round((pexp(7, 2) - pexp(6, 2)) / (1 - pexp(6, 2)), 4)
 [1] 0.8647
+
+#Sia  X una variabile aleatoria distribuita come una Normale di media  0.2  e varianza 1. 
+#Sia Y una variabile aleatoria distribuita come una Esponenziale di parametro ('rate') pari a  1 , indipendente da X.
+#Determinare:
+
+# 1. La probabilità che Y sia maggiore di 2.
+# 2. La probabilità che almeno una delle due variabili aleatorie sia maggiore di 2. 
+# 3. La probabilità che al massimo una delle due sia maggiore di 1. 
+
+#NB: possono essere utili le funzioni di R pexp e pnorm
+
+# soluzione:
+
+#1
+1 - pexp(2, 1)
+round(1 - pexp(2, 1), 4)
+[1] 0.1353
+
+#2
+# TEORIA: 1 - P("tutte e due minori di 2") = 1 - P(X < 2) x P(Y < 2)
+1 - (pnorm(2, 0.2, 1) * pexp(2, 1))
+round(1 - (pnorm(2, 0.2, 1) * pexp(2, 1)), 4)
+[1] 0.1664
+
+#3
+# P(al massimo una delle due > 1)
+# = 1 - P(entrambe > 1)
+# per indipendenza: P(X > 1 e Y > 1) = P(X > 1) * P(Y > 1)
+
+1 - (1 - pnorm(1, 0.2, 1)) * (1 - pexp(1, 1))
+round(1 - (1 - pnorm(1, 0.2, 1)) * (1 - pexp(1, 1)), 4)
+[1] 0.8647
