@@ -7,6 +7,8 @@
 
 # 3 La probabilità che X sia maggiore di 3 sapendo che X è minore di 6.
 
+# 4 la probabilità che X sia compresa fra -2 e 1.
+
 # Soluzione:
 
 #1
@@ -23,6 +25,11 @@ round(1 - pnorm(3, 0, sqrt(4)), 4)
 (pnorm(6, 0, sqrt(4)) - pnorm(3, 0, sqrt(4))) / pnorm(6, 0, sqrt(4))
 round((pnorm(6, 0, sqrt(4)) - pnorm(3, 0, sqrt(4))) / pnorm(6, 0, sqrt(4)), 4)
 [1] 0.0655
+
+#4
+pnorm(1, 0, sqrt(4)) - pnorm(-2, 0, sqrt(4))
+round(pnorm(1, 0, sqrt(4)) - pnorm(-2, 0, sqrt(4)), 4)
+[1] 0.5328
 
 # Sia X una variabile aleatoria distribuita come una Normale di media 1 e varianza 1
 # Determinare:
