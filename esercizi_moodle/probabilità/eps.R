@@ -3,7 +3,7 @@ Determinare:
 
 1 La probabilità che X sia minore di 1.5. Risposta 1 Domanda 27
  
-> pnorm(1.5, 0, 2)
+> pnorm(1.5, 0, 2) #--> 2 == sqrt(4) -> deviazione standard 2 e 4 varianza
 [1] 0.7733726
 
 2 La probabilità che X sia maggiore di 3. Risposta 2 Domanda 27
@@ -13,6 +13,7 @@ Determinare:
 
 3 La probabilità che X sia compresa fra -2 e 1.
 
+# - -> compresa fra -2 e 1
 > pnorm(1, 0, 2)-pnorm(-2, 0, 2)
 [1] 0.5328072
 
