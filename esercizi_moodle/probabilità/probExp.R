@@ -74,3 +74,28 @@ round(pexp(4, 0.5) - pexp(1, 0.5), 4)
 (pexp(6, 0.5) - pexp(1.7, 0.5)) / pexp(6, 0.5)
 round((pexp(6, 0.5) - pexp(1.7, 0.5)) / pexp(6, 0.5), 4)
 [1] 0.3974
+
+# Sia X una variabile aleatoria distribuita come una Esponenziale di parametro ('rate') pari a 2.
+# Determinare:
+
+# 1 la probabiitlità che X sia maggiore di 3.
+# 2 la probabilità che X sia compresa nell'intervallo (2,3).
+# 3 la probabilità che X sia minore di 7 sapendo che X è maggiore di 6.
+
+
+# soluzione:
+
+#1
+1 - pexp(3, 2)
+round(1 - pexp(3, 2), 4)
+[1] 0.0025
+
+#2
+pexp(3, 2) - pexp(2, 2)
+round(pexp(3, 2) - pexp(2, 2), 4)
+[1] 0.0158
+
+#3 probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+(pexp(7, 2) - pexp(6, 2)) / (1 - pexp(6, 2))
+round((pexp(7, 2) - pexp(6, 2)) / (1 - pexp(6, 2)), 4)
+[1] 0.8647
