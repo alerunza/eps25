@@ -171,3 +171,28 @@ round(1 - pnorm(3, 0, sqrt(4)), 4)
 round((pnorm(6, 0, sqrt(4)) - pnorm(3, 0, sqrt(4))) / pnorm(6, 0, sqrt(4)), 4)
 [1] 0.0655
 
+# Sia Y una variabile aleatoria normale, di media 3 e di varianza 4.
+# Sia X = Y - 3.
+
+# Determinare:
+
+# 1 il valore atteso di X
+# 2 P({X <= 1.2} U {X > 2})
+# 3 La probabilità che X sia più grande di 1.7 sapendo che X è più grande di 1.
+
+# soluzione:
+
+#1
+3 - 3 # E(X) = E(Y - 3) = E(Y)
+[1] 0
+
+#2
+pnorm(1.2, 0, 2) + (1 - pnorm(2, 0, 2))
+round(pnorm(1.2, 0, 2) + (1 - pnorm(2, 0, 2)), 4)
+[1] 0.6826
+
+#3 probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+(1 - pnorm(1.7, 0, 2)) / (1 - pnorm(1, 0, 2))
+round((1 - pnorm(1.7, 0, 2)) / (1 - pnorm(1, 0, 2)), 4)
+[1] 0.5675
+
