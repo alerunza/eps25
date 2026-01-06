@@ -153,10 +153,6 @@ den <- 1 - pnorm(5,3,1)
 num / den
 [1] 0.9986079
 
-
-t.test(dati$time_new_version, dati$time_old_version, alternative = "less", paired = TRUE)
-
-
 | Sia Y una variabile aleatoria Normale standard e sia X = Y + 2.
 Determinare:
 
@@ -165,7 +161,7 @@ Determinare:
 2. P({X <= 2.5} U {X > 3}):
 > pnorm(2.5,2,1) + (1 - pnorm(3,2,1)) = 0.8501
 
-4. La probabilità che X sia maggiore di 1.7 sapendo che X è maggiore di 1 Risposta 3 Domanda 43
+3. La probabilità che X sia maggiore di 1.7 sapendo che X è maggiore di 1 Risposta 3 Domanda 43
 > (1 - pnorm(1.7,2,1)) / (1-pnorm(1,2,1)) =  0.7344
 
 | Sia X una variabile aleatoria continua distribuita come una Uniforme sull intervallo  [2,10] .
@@ -174,19 +170,30 @@ Determinare:
 note: Intervallo: [2, 10] | Lunghezza: 10−2=8 | Media: μ=(2+10)/2=6.
 
 1. La probabilità che X sia minore della sua media.
-
 > punif(6, 2, 10)
 
 2. La probabilità che X sia maggiore di 3.
-
 > 1-punif(3, 2, 10)
 
 3. La probabilità che X sia compresa fra -2 e 3.
-
 > punif(3, 2, 10)-punif(-2, 2, 10) = 0.125
 
-4 La probabilità che X sia maggiore di 3 sapendo che X è minore di 6.
-
+4. La probabilità che X sia maggiore di 3 sapendo che X è minore di 6.
 > num<-punif(6, 2, 10)-punif(3, 2, 10)
 > den<-punif(6, 2, 10)
 > num/den = 0.75
+
+| Sia  Y  una variabile aleatoria distribuita come una Normale di media -5 e varianza 1.
+Consideriamo  X = Y + 4.
+Determinare:
+
+RICORDARE: la varianza non cambia!! solo la media deriva dalla equazione (-5+4=-1).
+
+1. La probabilità che X sia negativa.
+pnorm(0,-1,1) = 0.8413
+
+2. La probabilità che  -X  sia compresa fra -2 e 1.
+pnorm(1,1,1) - pnorm(-2,1,1) = 0.4987
+
+3. La probabilità che X sia positiva sapendo che 2X è minore di 3.
+(pnorm(3/2,-1,1) - pnorm(0,-1,1) ) / pnorm(3/2,-1,1) = 0.1534
