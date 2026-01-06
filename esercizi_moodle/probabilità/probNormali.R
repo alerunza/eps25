@@ -47,3 +47,26 @@ round(pnorm(2.5, 1, 1) + (1 - pnorm(3, 1, 1)) - pnorm(2.5, 1, 1), 4)
 (pnorm(6, 1, 1) - pnorm(0.5, 1, 1)) / pnorm(6, 1, 1)
 round((pnorm(6, 1, 1) - pnorm(0.5, 1, 1)) / pnorm(6, 1, 1), 4)
 [1] 0.6915
+
+
+# Sia X una variabile aleatoria distribuita come una Normale di media 2 e varianza 4.
+# Determinare:
+
+# 1 la P({X = 0} U {X = 1})
+# 2 P(X ≤ 2.5)+P(X ≥ 3)-P(X < 2.5)
+# 3 La probabilità che X sia maggiore di 1.7 sapendo che X è minore di 6.
+
+# soluzione:
+#1
+# per variabile continua P(X = k) = 0
+0
+
+#2
+pnorm(2.5, 2, sqrt(4)) + (1 - pnorm(3, 2, sqrt(4))) - pnorm(2.5, 2, sqrt(4))
+round(pnorm(2.5, 2, sqrt(4)) + (1 - pnorm(3, 2, sqrt(4))) - pnorm(2.5, 2, sqrt(4)), 4)
+[1] 0.3085
+
+#3 probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+(pnorm(6, 2, sqrt(4)) - pnorm(1.7, 2, sqrt(4))) / pnorm(6, 2, sqrt(4))
+round((pnorm(6, 2, sqrt(4)) - pnorm(1.7, 2, sqrt(4))) / pnorm(6, 2, sqrt(4)), 4)
+[1] 0.5494
