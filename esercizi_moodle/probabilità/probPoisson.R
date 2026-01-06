@@ -23,3 +23,30 @@ round(1 - ppois(4, 10), 4)
 (ppois(3, 10) - dpois(0, 10)) / (1 - dpois(0, 10))
 round((ppois(3, 10) - dpois(0, 10)) / (1 - dpois(0, 10)), 4)
 [1] 0.0103
+
+# Sia X una variabile aleatoria Poisson di parametro 1.
+# Calcolare:
+
+# 1 la probabilità che "la variabile aleatoria X valga 5 oppure 3"
+# 2 la P(X appartiene (0.5, 7])
+# 3 la P(X appartiene {1,2,3,4} | X > 0)
+
+# soluzione:
+
+#1
+# valga 5 oppure 3
+dpois(5, 1) + dpois(3, 1)
+round(dpois(5, 1) + dpois(3, 1), 4)
+[1] 0.0082
+
+#2
+# da 0.5 a 7  equivale a P(X ≤ 7) - P(X ≤ 0.5)
+ppois(7, 1) - ppois(0.5, 1)
+round(ppois(7, 1) - ppois(0.5, 1), 4)
+[1] 0.6321
+
+#3 probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+(dpois(1, 1) + dpois(2, 1) + dpois(3, 1) + dpois(4, 1)) / (1 - dpois(0, 1))
+round((dpois(1, 1) + dpois(2, 1) + dpois(3, 1) + dpois(4, 1)) / (1 - dpois(0, 1)), 4)
+[1] 0.9942
+
