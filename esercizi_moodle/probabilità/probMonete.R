@@ -94,3 +94,28 @@ per la terza: molto semplicemente, se la seconda è R, da consegna, la terza si 
 quindi risposta finale: (1/2)^3 + (1/2)*(1/4)*(1/2).
 
 
+# Si lancia cinque volte una moneta non truccata. Calcolare:
+
+#1 la probabilità dell'evento A: "i primi tre risultati sono uguali":
+#2 la probabilità dell'evento B: "{"i primi tre risultati sono uguali"} U {gli ultimi tre risultati sono uguali}":
+
+# soluzione:
+
+#1
+# i primi tre risultati sono uguali: possono essere tutti teste o tutti croce
+p_A <- 2 * (1/2)^3
+round(p_A, 4)
+[1] 0.25
+
+#2
+# gli ultimi tre risultati sono uguali: possono essere tutti teste o tutti croce
+p_B <- 2 * (1/2)^3
+# calcolo P(A ∩ B)
+# i primi tre risultati sono uguali e gli ultimi tre sono uguali: i primi tre
+# possono essere tutti teste o tutti croce, e il quarto e il quinto risultato
+# devono essere uguali al terzo
+p_A_and_B <- 2 * (1/2)^5
+# calcolo P(A U B) = P(A) + P(B) - P(A ∩ B)
+p_A_or_B <- p_A + p_B - p_A_and_B
+round(p_A_or_B, 4)
+[1] 0.4375
