@@ -196,3 +196,28 @@ round(pnorm(1.2, 0, 2) + (1 - pnorm(2, 0, 2)), 4)
 round((1 - pnorm(1.7, 0, 2)) / (1 - pnorm(1, 0, 2)), 4)
 [1] 0.5675
 
+# Sia X una variabile aleatoria distribuita come una Normale di media 2 e varianza 4.
+# Sia y una variabile aleatoria distribuita come una Normale standard, indipende da X.
+
+# Determinare:
+# 1 la probabilità che X sia maggiore di 3.
+# 2 la probabilità che entrambe le variabili aleatorie siano maggiori di 3.
+# 3 la probabilità che X sia minore di 7 sapendo che X è maggiore di 6.
+
+# soluzione:
+
+#1
+1 - pnorm(3, 2, sqrt(4))
+round(1 - pnorm(3, 2, sqrt(4)), 4)
+[1] 0.3085
+
+#2
+#indipendenza
+(1 - pnorm(3, 2, sqrt(4))) * (1 - pnorm(3, 0, 1))
+[1] 0.0004164942162 --> arrotondato a 0.0004
+
+#3
+# probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+(pnorm(7, 2, sqrt(4)) - pnorm(6, 2, sqrt(4))) / (1 - pnorm(6, 2, sqrt(4)))
+round((pnorm(7, 2, sqrt(4)) - pnorm(6, 2, sqrt(4))) / (1 - pnorm(6, 2, sqrt(4))), 4)
+[1] 0.727
