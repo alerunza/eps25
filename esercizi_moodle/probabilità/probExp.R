@@ -50,3 +50,27 @@ round(1 - pexp(3, 2), 4)
 (pexp(6, 2) - pexp(3, 2))
 round((pexp(6, 2) - pexp(3, 2)), 4)
 [1] 0.0025
+
+# Sia Y una variabile aleatoria distribuita come una Esponenziale di paametro 0.5 e sia X = Y - 1.
+# Determinare:
+
+# 1 la P({X = 0} U {X = 1})
+# 2 P(X apptiene (0,3))
+# 3 La probabilità che Y (AttENZIONE, qui è Y) sia maggiore di 1.7 sapendo che Y è minore di 6.
+
+# soluzione:
+#1
+# per variabile continua P(X = k) = 0
+0
+
+#2
+# 4 è il valore di Y corrispondente a X = 3 (cioè Y - 1 = 3  => Y = 4)
+# e 1 è il valore di Y corrispondente a X = 0 (cioè Y - 1 = 0  => Y = 1)
+pexp(4, 0.5) - pexp(1, 0.5)
+round(pexp(4, 0.5) - pexp(1, 0.5), 4)
+[1] 0.4712
+
+#3 probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+(pexp(6, 0.5) - pexp(1.7, 0.5)) / pexp(6, 0.5)
+round((pexp(6, 0.5) - pexp(1.7, 0.5)) / pexp(6, 0.5), 4)
+[1] 0.3974
