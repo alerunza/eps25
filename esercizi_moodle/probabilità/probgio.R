@@ -168,25 +168,25 @@ Determinare:
 4. La probabilità che X sia maggiore di 1.7 sapendo che X è maggiore di 1 Risposta 3 Domanda 43
 > (1 - pnorm(1.7,2,1)) / (1-pnorm(1,2,1)) =  0.7344
 
-Sia X una variabile aleatoria continua distribuita come una Uniforme sull intervallo  [2,10] .
+| Sia X una variabile aleatoria continua distribuita come una Uniforme sull intervallo  [2,10] .
 Determinare:
 
-1 La probabilità che X sia minore della sua media.
+note: Intervallo: [2, 10] | Lunghezza: 10−2=8 | Media: μ=(2+10)/2=6.
 
+1. La probabilità che X sia minore della sua media.
 
+> punif(6, 2, 10)
 
-2 La probabilità che X sia maggiore di 3.
+2. La probabilità che X sia maggiore di 3.
 
-3 La probabilità che X sia compresa fra -2 e 3.
+> 1-punif(3, 2, 10)
+
+3. La probabilità che X sia compresa fra -2 e 3.
+
+> punif(3, 2, 10)-punif(-2, 2, 10) = 0.125
 
 4 La probabilità che X sia maggiore di 3 sapendo che X è minore di 6.
 
-
-Comandi di R che potrebbero essere utili: punif, dunif
-
-STATISTICA
-
-frequenza e relativa:
-> table(ristorante$fascia_oraria=="Pranzo", useNA="always")
-> freq.rel. = freq./tot oss.
-> table(ristorante$fascia_oraria[ristorante$categoria_piatto=="Piatti vegetariani"]=="Pranzo", useNA="always")
+> num<-punif(6, 2, 10)-punif(3, 2, 10)
+> den<-punif(6, 2, 10)
+> num/den = 0.75
