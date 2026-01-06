@@ -168,6 +168,7 @@ Determinare:
 Determinare:
 
 note: Intervallo: [2, 10] | Lunghezza: 10−2=8 | Media: μ=(2+10)/2=6.
+RICORDARE: la media è somma dei valori dellintervallo / 2 !!!
 
 1. La probabilità che X sia minore della sua media.
 > punif(6, 2, 10)
@@ -197,3 +198,19 @@ pnorm(1,1,1) - pnorm(-2,1,1) = 0.4987
 
 3. La probabilità che X sia positiva sapendo che 2X è minore di 3.
 (pnorm(3/2,-1,1) - pnorm(0,-1,1) ) / pnorm(3/2,-1,1) = 0.1534
+
+| Sia  Y  una variabile aleatoria distribuita come una Normale di media 2 e varianza 4.
+Consideriamo  X = 2 - Y .
+Determinare:
+
+1. La probabilità che X sia negativa.
+> pnorm(0, 0, 2) = 0.5
+
+2. La probabilità che  -X  sia compresa fra -2 e 1.
+> pnorm(1, 0, 2)-pnorm(-2, 0, 2) = 0.5328
+
+3. La probabilità che X sia negativa sapendo che X è maggiore di -3.
+> num<-pnorm(0, 0, 2)-pnorm(-3, 0, 2)
+> den<-1-pnorm(-3, 0, 2)
+> num/den = 0.4642
+
