@@ -80,3 +80,29 @@ p_A_and_B <- 2 * (1/2)^5
 p_A_or_B <- p_A + p_B - p_A_and_B
 round(p_A_or_B, 4)
 [1] 0.4375
+
+#Si hanno a disposizione 3 monete. La moneta A ha probabilità di ottenere testa pari a  p . La moneta B ha probabilità di ottenere testa pari a  p/2 . 
+#La moneta C ha probabilità di ottenere testa pari a  p/3 .
+#Si fanno tre lanci consecutivi con la seguente procedura:
+#- Primo lancio: Si lancia la moneta A.
+#- Secondo lancio: Se al lancio precedente si è ottenuto testa allora si lancia la moneta A. Se si è avuto croce si lancia la moneta B.
+#- Terzo lancio: Se nel lancio precedente si è ottenuto testa allora si lancia la moneta A. Se nel primo lancio si è ottenuto testa e nel secondo lancio si è ottenuto croce, allora si lancia la moneta B. Se nel primo e nel secondo lancio si è ottenuto croce allora si lancia la moneta C.
+
+# 1 Se  p = 1/4 , determinare la probabilità della sequenza (Testa,Testa,Testa)
+# 2 Se  p = 1/2 , determinare la probabilità della sequenza (Croce, Croce, Croce)
+# 3 Se  p = 1/4 , determinare la probabilità che si abbia Testa al secondo e al terzo lancio.
+# 4 Per quale valore di p la sequenza (Croce, croce, croce) ha probabilità 0?
+# soluzione:
+
+
+
+
+
+#Una moneta sbilanciata viene lanciata ripetutamente. In ciascun lancio la probabilità che esca T è 0.4. 
+#Calcolare la probabilità degli eventi:
+
+# 1. A = \text{"la prima T esce al quarto lancio"};
+# 2. B = \text{"la terza T esce al settimo lancio"};
+# 3. C = A \cap B;
+
+#NB: può essere utile la funzione choose di R
