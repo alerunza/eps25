@@ -32,8 +32,26 @@ Determinare la probabilità della sequenza (Nera, Nera, Nera):
 (1/2)*(1/4)*(5/6) --> da subito mi segno la prob per R e N per le 3 estrazioni e trovo semplicemente quei valori.
 
 Determinare la probabilità che si estragga una pallina rossa sia alla seconda sia alla terza estrazione.:
-per la prima, dato che non specificato --> R o N è uguale (1/2) e per tre posizioni (^3) dato che potrebbe avere conseguenze sulla seconda e anche sulla terza.
-per la seconda estrazione, è 1/4 di prob per R, come stabilito fin da subito.
-per la terza: molto semplicemente, se la seconda è R, da consegna, la terza si estrae dalla A (quindi 1/2 di prob).
+- per la prima, dato che non specificato --> R o N è uguale (1/2) e per tre posizioni (^3) dato che potrebbe avere conseguenze sulla seconda e anche sulla terza.
+- per la seconda estrazione, è 1/4 di prob per R, come stabilito fin da subito.
+- per la terza: molto semplicemente, se la seconda è R, da consegna, la terza si estrae dalla A (quindi 1/2 di prob).
 quindi risposta finale: (1/2)^3 + (1/2)*(1/4)*(1/2).
 
+| Ci sono quattro scatole in un armadio: la scatola A ha 4 palline numerate da 1 a 4, la scatola B ha sei palline numerate da 1 a 6), le scatole C e D  hanno ambedue 8 palline numerate da 1 a 8. La tua amica prende segretamente e uniformemente a caso una scatola e ne estrae una pallina.
+
+1. Determinare la probabilità di ottenere un numero minore o uguale a 3 oppure 5 (=5).
+inizio considerando per ogni scatola (A, B, C, D) la prob. di ottenre {1, 2, 3, 5}.
+- in A la prob. è 3/4
+- in B la prob. è 4/6 => 2/3
+- in C la prob. è 4/8 => 1/2
+- in D come in C (1/2)
+tutti questi valori li sommo.
+E POI ultimo importante passaggio: MOLTIPLICO quel risultato * 1/4 (=la scatola scelta a caso, 1 su 4 essendo 4 le scatole). ez
+
+2. Sai che è uscito 4 oppure 5. Qual è la probabilità che la pallina sia stata estratta dalla scatola C o dalla D?
+--> formuletta: (casi C o D che danno 4 o 5)/(tutti i casi che danno 4 o 5).
+E RICORDARE SEMPRE CHE BISOGNA MOLTICPLICARE PER LA PROBABILITA DELLA SCATOLA (1/4).
+quindi: {4, 5}:
+numeratore (C * 1/4 + D * 1/4): (1/4*1/4) + (1/4*1/4)
+denominatore ((A + B + C + D) *1/4): (1/4+1/3+1/4+1/4)*1/4
+> (1/8)/(13/48) = 0.4615
