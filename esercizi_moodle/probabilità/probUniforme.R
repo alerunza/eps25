@@ -52,3 +52,61 @@ mean(x^2) - mean(x)^2
 #4 Var(X + Y) = Var(X) + Var(Y)  dato che X e Y sono indipendenti
 2 * (mean(x^2) - mean(x)^2)
 [1] 0.5
+
+#Sia X una variabile aleatoria continua distribuita come una Uniforme sull'intervallo[2,10] .
+# Determinare:
+
+# 1 La probabilità che X sia minore della sua media. 
+# 2 La probabilità che X sia maggiore di 3.
+# 3 La probabilità che X sia compresa fra -2 e 3. 
+# 4 La probabilità che X sia maggiore di 3 sapendo che X è minore di 6. 
+
+#Comandi di R che potrebbero essere utili: punif, dunif
+
+# soluzione:
+
+#1
+punif(6, 2, 10)
+[1] 0.5
+
+#2
+1 - punif(3, 2, 10)
+[1] 0.875
+
+#3
+punif(3, 2, 10) - punif(-2, 2, 10)
+[1] 0.125  
+
+#4
+num <- punif(6, 2, 10) - punif(3, 2, 10)
+den <- punif(6, 2, 10)
+num / den
+[1] 0.75
+
+# Sia X una variabile aleatoria continua distribuita come una Uniforme sull'intervallo [0,1] .
+#Determinare:
+
+# 1 La probabilità che X sia minore della sua media. 
+# 2 La probabilità che - X sia maggiore di -0.25. 
+# 3 La probabilità che X - 0.5 sia positiva sapendo che X è minore di 0.9. 
+
+#Comandi di R che potrebbero essere utili: punif, dunif
+
+# soluzione:
+
+#1
+punif(1/2, 0, 1)
+[1] 0.5
+
+#2
+#P(-X > -0.25) = P(X < 0.25)
+punif(0.25, 0, 1)
+[1] 0.25
+
+#3
+#probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+num <- punif(0.9, 0, 1) - punif(0.5, 0, 1)
+den <- punif(0.9, 0, 1)
+num / den
+[1] 0.4444444
+
