@@ -1,22 +1,3 @@
-
-— Esercizio —
-
-| Si hanno a disposizione 3 monete. La moneta A ha probabilità di ottenere testa pari a  p . La moneta B ha probabilità di ottenere testa pari a  p/2 . La moneta C ha probabilità di ottenere testa pari a  p/3 . Si fanno tre lanci consecutivi con la seguente procedura:
-
-- Primo lancio: Si lancia la moneta A.
-- Secondo lancio: Se al lancio precedente si è ottenuto testa allora si lancia la moneta A. Se si è avuto croce si lancia la moneta B.
-- Terzo lancio: Se nel lancio precedente si è ottenuto testa allora si lancia la moneta A. Se nel primo lancio si è ottenuto testa e nel secondo lancio si è ottenuto croce, allora si lancia la moneta B. Se nel primo e nel secondo lancio si è ottenuto croce allora si lancia la moneta C.
-
-1. Se  p = 1/4 , determinare la probabilità della sequenza (Testa,Testa,Testa):
-(1/4)^3 = 0.0156
-
-2. Se  p = 1/2 , determinare la probabilità della sequenza (Croce, Croce, Croce):
-poichè qui si tratta di croce, prendo le probabilità di ciauscuna moneta (calcolata per testa) e poi prendo tutto il resto (per croce)
-e si moltiplica tutto --> 1/2 * 3/4 * 5/6 = 0.3125
-
-3. Per quale valore di  p  la sequenza (Croce, Croce, Croce) ha probabilità zero?
-P = 1 --> semplicemente pk così significa x def. che esce per forza testa al primo lancio --> cosa che esclude quindi CCC (prob=0, come richiesto).
-
 | Si hanno a disposizione 3 scatole. La scatola A contiene 12 palline rosse e 12 palline nere. La scatola B contiene 10 palline rosse e 30 palline nere. La scatola C contiene 3 palline rosse e 15 palline nere. Si estraggono tre palline in tre estrazioni consecutive con reintroduzione con la seguente procedura:
 
 - Prima estrazione: Si estrae una pallina dalla scatola A.
@@ -70,3 +51,9 @@ e poi: (1.2+3)/10 --> 10 palline totali in U_3
 3. Il momento secondo E X^2:
 --> VAR + EX^2
 > ((0.42)^2) + ((4*0.3*0.7 + 6*0.5*0.5) / 100) = 0.1998
+
+Siano date 3 urne e 4 palline indistinguibili. Si definisca l'evento A_j = l'urna j-esima resta vuota con j = 1, 2, 3. Calcolare con quale probabilità, inserendo uniformemente a caso e indipendentemente le 4 palline nelle 3 urne?.
+1. la prima urna resti vuota: significa che teniamo conto solo di 2 e 3 U. quindi (2/3 ^ 4).
+2. la seconda urna resti vuota: uguale a 1.-
+3. almeno una urna resti vuota:
+4. due urne restano vuote se almeno una delle tre urne è vuota:
