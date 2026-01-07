@@ -2,11 +2,8 @@
 # Determinare:
 
 # 1 La probabilità che X sia minore di 1.5
-
 # 2 La probabilità che X sia maggiore di 3.
-
 # 3 La probabilità che X sia maggiore di 3 sapendo che X è minore di 6.
-
 # 4 la probabilità che X sia compresa fra -2 e 1.
 
 # Soluzione:
