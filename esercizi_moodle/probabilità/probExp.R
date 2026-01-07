@@ -131,3 +131,61 @@ round(1 - (pnorm(2, 0.2, 1) * pexp(2, 1)), 4)
 1 - (1 - pnorm(1, 0.2, 1)) * (1 - pexp(1, 1))
 round(1 - (1 - pnorm(1, 0.2, 1)) * (1 - pexp(1, 1)), 4)
 [1] 0.8647
+
+# Sia  X una variabile aleatoria distribuita come una Esponenziale di parametro ('rate') pari a  2 . 
+# Sia Y una variabile aleatoria distribuita come una Esponenziale di parametro ('rate') pari a  1 , indipendente da X.
+#Determinare:
+
+# 1. La probabilità che X sia maggiore di 3.
+# 2. La probabilità che entrambe le variabili aleatorie siano maggiori di 2.
+# 3. La probabilità che X sia minore di 7 sapendo che X è maggiore di 6.
+
+#NB: può essere utile la funzione di R pexp
+
+# soluzione:
+
+#1
+1 - pexp(3, 2)
+round(1 - pexp(3, 2), 4)
+[1] 0.0025
+
+#2
+# per indipendenza: P(X > 2 e Y > 2) = P(X > 2) * P(Y > 2)
+(1 - pexp(2, 2)) * (1 - pexp(2, 1))
+round((1 - pexp(2, 2)) * (1 - pexp(2, 1)), 4)
+[1] 0.0183
+
+#3
+# probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+(pexp(7, 2) - pexp(6, 2)) / (1 - pexp(6, 2))
+round((pexp(7, 2) - pexp(6, 2)) / (1 - pexp(6, 2)), 4)
+[1] 0.8647
+
+# Sia  X una variabile aleatoria distribuita come una Esponenziale di parametro ('rate') pari a  0.2 . 
+# Sia Y una variabile aleatoria distribuita come una Esponenziale di parametro ('rate') pari a  0.5 , indipendente da X.
+#Determinare:
+
+# 1. La probabilità che Y sia maggiore di 3. 
+# 2. La probabilità che almeno una delle due variabili aleatorie sia maggiore di 2. 
+# 3. La probabilità che X sia minore di 1 sapendo che X è minore di 2. 
+
+#NB: può essere utile la funzione di R pexp
+
+#soluzione:
+
+#1
+1 - pexp(3, 0.5)
+round(1 - pexp(3, 0.5), 4)
+[1] 0.2231
+
+#2
+# TEORIA: 1 - P("tutte e due minori di 2") = 1 - P(X < 2) x P(Y < 2)
+1 - (pexp(2, 0.2) * pexp(2, 0.5))
+round(1 - (pexp(2, 0.2) * pexp(2, 0.5)), 4)
+[1] 0.7916
+
+#3
+# probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+pexp(1, 0.2) / pexp(2, 0.2)
+round(pexp(1, 0.2) / pexp(2, 0.2), 4)
+[1] 0.5498
