@@ -55,3 +55,18 @@ quindi: {4, 5}:
 numeratore (C * 1/4 + D * 1/4): (1/4*1/4) + (1/4*1/4)
 denominatore ((A + B + C + D) *1/4): (1/4+1/3+1/4+1/4)*1/4
 > (1/8)/(13/48) = 0.4615
+
+| L'urna U_1 contiene una proporzione 0.3 di palline bianche e l'urna U_2 una proporzione 0.5 di palline bianche. Si estraggono con reimbussolamento 4 palline da U_1 e 6 da U_2. Tutte le palline estratte vengono sistemate in una terza urna U_3. Sia X la proporzione di palline bianche nella urna  U_3.
+Calcolare:
+
+1. Il valore atteso E X:
+> 0.3*4 = 1.2
+> 0.5*6 = 3
+e poi: (1.2+3)/10 --> 10 palline totali in U_3
+
+2. La varianza VAR X:
+> (4 x 0.3 x 0.7 + 6 x 0.5 x 0.5) / 100 (teoria della varianza: (10)^2=100)
+
+3. Il momento secondo E X^2:
+--> VAR + EX^2
+> ((0.42)^2) + ((4*0.3*0.7 + 6*0.5*0.5) / 100) = 0.1998
