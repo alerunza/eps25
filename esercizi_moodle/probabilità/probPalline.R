@@ -10,7 +10,7 @@ Determinare la probabilità della sequenza (Rossa, Rossa, Rossa):
 (1/2)^3 --> dato che per la prima scatola sono 12 e 12 (per un tot di 24) e poi così via dato che se R nella A, si estrae di nuovo dalla A (sempre 1/2 prob).
 
 Determinare la probabilità della sequenza (Nera, Nera, Nera):
-(1/2)*(1/4)*(5/6) --> da subito mi segno la prob per R e N per le 3 estrazioni e trovo semplicemente quei valori.
+(1/2)*(3/4)*(5/6) --> da subito mi segno la prob per R e N per le 3 estrazioni e trovo semplicemente quei valori.
 
 Determinare la probabilità che si estragga una pallina rossa sia alla seconda sia alla terza estrazione.:
 - per la prima, dato che non specificato --> R o N è uguale (1/2) e per tre posizioni (^3) dato che potrebbe avere conseguenze sulla seconda e anche sulla terza.
