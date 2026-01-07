@@ -416,7 +416,7 @@ round(pnorm(0, 3, 1) - pnorm(-1, 3, 1), 4)
 
 1 - (1 - pnorm(2.5,3,1)) * (pnorm(-1,0,1) - pnorm(-2,0,1)) / (1 - pnorm(-2,0,1))
 round(1 - (1 - pnorm(2.5,3,1)) * (pnorm(-1,0,1) - pnorm(-2,0,1)) / (1 - pnorm(-2,0,1)), 4)
-# [1] 0.9038
+[1] 0.9038
 
 
 #4
@@ -426,4 +426,93 @@ round(1 - (1 - pnorm(2.5,3,1)) * (pnorm(-1,0,1) - pnorm(-2,0,1)) / (1 - pnorm(-2
 
 (pnorm(7,3,1) - pnorm(5,3,1)) / (1 - pnorm(5,3,1))
 round((pnorm(7,3,1) - pnorm(5,3,1)) / (1 - pnorm(5,3,1)), 4)
-# [1] 0.9986
+[1] 0.9986
+
+# Siano X1, X2, X3 tre variabili aleatorie indipendenti e identicamente distribuite, con distribuzione Normale di media 0.2 e varianza 1.
+# Determinare:
+
+# 1. La probabilità che X_2 sia maggiore di 2.
+# 2. La probabilità che almeno una delle tre variabili aleatorie sia maggiore di 1.
+# 3. La probabilità che Y = 2X_2 − 0.4 sia maggiore di 1.
+
+# soluzione:
+
+#1
+1 - pnorm(2, 0.2, 1)
+round(1 - pnorm(2, 0.2, 1), 4)
+[1] 0.0359
+
+#2
+1 - (pnorm(1, 0.2, 1) ^ 3)
+round(1 - (pnorm(1, 0.2, 1) ^ 3), 4)
+[1] 0.5104
+
+#3
+# Y ha distribuzione Normale di media 0 e varianza 4 --> deviazione standard 2.
+# Quindi P ( Y > 1 ):
+1 - pnorm(1, 0, 2)
+round(1 - pnorm(1, 0, 2), 4)
+[1] 0.3085
+
+# Sia Y una variabile aleatoria come una Normale di media - 5 e varianza 1.
+# Consideriamo X = Y + 4.
+# Determinare:
+
+# 1. La probabilità che X sia negativa
+# 2. La probabilità che -X sia compresa fra -2 e 1.
+# 3. La probabilità che X sia positiva sapendo che 2X è minore di 3.
+
+# soluzione:
+
+#1
+pnorm(0, -1, 1)
+round(pnorm(0, -1, 1), 4)
+[1] 0.8413
+
+#2
+pnorm(1, 1, 1) - pnorm(-2, 1, 1)
+round(pnorm(1, 1, 1) - pnorm(-2, 1, 1), 4)
+[1] 0.4987
+
+#oppure calcolo direttamente P(-2 < -X < 1) = P(-1 < X < 2)
+pnorm(2, -1, 1) - pnorm(-1, -1, 1)
+round(pnorm(2, -1, 1) - pnorm(-1, -1, 1), 4)
+[1] 0.4987
+
+#3
+# probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+(pnorm(1.5, -1, 1) - pnorm(0, -1, 1)) / pnorm(1.5, -1, 1)
+round((pnorm(1.5, -1, 1) - pnorm(0, -1, 1)) / pnorm(1.5, -1, 1), 4)
+[1] 0.1534
+
+# oppure
+(pnorm(3/2, -1, 1) - pnorm(0, -1, 1)) / pnorm(3/2, -1, 1)
+round((pnorm(3/2, -1, 1) - pnorm(0, -1, 1)) / pnorm(3/2, -1, 1), 4)
+[1] 0.1534
+
+#Sia Y una variabile aleatoria distribuita come una Normale di media 2 e varianza 4. 
+#Consideriamo  X = 2 - Y .
+#Determinare:
+
+# 1 La probabilità che X sia negativa.
+# 2 La probabilità che  -X  sia compresa fra -2 e 1.
+# 3 La probabilità che X sia negativa sapendo che  X è maggiore di -3.
+
+# soluzione:
+
+#1
+pnorm(0, 0, sqrt(4))
+round(pnorm(0, 0, sqrt(4)), 4)
+[1] 0.5
+
+#2
+#P(-2 < -X < 1) = P(-1 < X < 2)
+pnorm(2, 0, sqrt(4)) - pnorm(-1, 0, sqrt(4))
+round(pnorm(2, 0, sqrt(4)) - pnorm(-1, 0, sqrt(4)), 4)
+[1] 0.5328
+
+#3
+# probabilità condizionata P(A|B) = P(A ∩ B) / P(B)
+(pnorm(0,0, sqrt(4)) - pnorm(-3, 0, sqrt(4))) / (1 -pnorm(-3, 0, sqrt(4)))
+round((pnorm(0, 0, sqrt(4)) - pnorm(-3, 0, sqrt(4))) / (1 - pnorm(-3, 0, sqrt(4))), 4)
+[1] 0.4642
