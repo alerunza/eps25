@@ -19,3 +19,22 @@ head(musica)
 
 names(musica)
 [1] "punteggio" "metodo" 
+
+mean(musica$punteggio[musica$metodo=="metodo A"])
+[1] 59.88764
+sd(musica$punteggio[musica$metodo=="metodo A"])
+[1] 4.8174
+
+sum(musica$punteggio[musica$metodo=="metodo A"]>=55 & musica$punteggio[musica$metodo == "metodo A"] <= 65)
+[1] 133
+
+# Il 10% degli studenti con rendimento peggiore (con punteggio basso) tra gli studenti che hanno seguito il metodo A ha punteggio inferiore a:
+quantile(musica$punteggio[musica$metodo=="metodo A"], 0.1)
+10% 54
+
+hist(musica$punteggio, breaks=8)
+
+# livello confidenza
+test<-t.test(musica$punteggio[musica$metodo == "metodo A"], musica$punteggio[musica$metodo == "metodo B"], paired = FALSE, conf.level = 0.99)
+round(test$conf.int, 4)
+
