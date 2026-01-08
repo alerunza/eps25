@@ -50,6 +50,7 @@ test <- test_cor <- cor.test(dati$diametro, dati$altezza, use = "complete.obs", 
 
 round(cor(dati$diametro, dati$altezza, use = "complete.obs"), 4)
 [1] 0.4829 #correlazione campionaria
+#più easy: > cor.test(dati$diametro, dati$altezza)
 
 round(test$p.value, 4)
 [1] 0
