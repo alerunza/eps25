@@ -50,4 +50,4 @@ test$parameter
 
 #dato che il p-value è maggiore di 0.01, non rifiutiamo H0 al livello di significatività 0.01
 #e quindi non c’è sufficiente evidenza (domanda 7)
-#e inoltre non possiamo affermare che le prestazioni del gruppo T siano migliori di quelle del gruppo I (domanda 8)
+#e inoltre non potendo rifiutare h_0, possiamo affermare che le prestazioni del gruppo T siano migliori di quelle del gruppo I (domanda 8)
