@@ -1,12 +1,19 @@
-| L’urna A contiene 10 palline bianche e 10 nere. L’urna B contiene 5 palline bianche e 15 nere. 
-Viene lanciata una moneta non truccata: se esce testa allora vengono fatte 3 estrazioni senza reinserimento dall’urna A; 
-se esce croce vengono fatte 5 estrazioni con reinserimento dall’urna B.
+#L’urna A contiene 10 palline bianche e 10 nere. L’urna B contiene 5 palline bianche e 15 nere. 
+#Viene lanciata una moneta non truccata: se esce testa allora vengono fatte 3 estrazioni senza reinserimento dall’urna A; 
+#se esce croce vengono fatte 5 estrazioni con reinserimento dall’urna B.
 
-1 Calcolare la probabilità di estrarre esattamente 2 palline bianche sapendo di aver ottenuto testa.
+#1 Calcolare la probabilità di estrarre esattamente 2 palline bianche sapendo di aver ottenuto testa.
+#2 Calcolare la probabilità di estrarre esattamente 2 palline bianche sapendo di aver ottenuto croce.
+#3 Calcolare la probabilità che vengano estratte esattamente 2 palline bianche.
+#4 Sapendo che sono state estratte esattamente 2 palline bianche, calcolare la probabilità che sia uscita testa.
+
+# soluzione:
+
+#1
 #P(BB | T)
 choose(10,2) * choose(10,1) / choose(20, 3)
 
-2 Calcolare la probabilità di estrarre esattamente 2 palline bianche sapendo di aver ottenuto croce.
+#2
 #P(BB | C)
 opzione 1: dbinom(2.5, 5/20)
 opzione 2: choose(5,2)*(1/4)^2*(3/4)^3
@@ -15,16 +22,14 @@ opzione 2: choose(5,2)*(1/4)^2*(3/4)^3
 # - sceglie modi di quelle -->1/4 sono le 5/20 bianche e le nere 3/4
 # - e queste ultime rispettivamente sono le 2 bianche estratte e 3 restanti (su 5 estrazioni)
 
-3 Calcolare la probabilità che vengano estratte esattamente 2 palline bianche.
+#3
 0.5*(choose(10,2)*choose(10,1)/choose(20,3)) +
 0.5*(choose(5,2)*(1/4)^2*(3/4)^3)
 #spiegazione:
 # 0.5 è 1/2 di prob per T o C.
 # poi umero di modi per scegliere 2 palline bianche dalle 10 bianche dell’urna A.
 
-4 Sapendo che sono state estratte esattamente 2 palline bianche, calcolare la probabilità che sia uscita testa.
-
-
+#4 
 
 #----------------------------------------------------------------------------#
 
@@ -71,6 +76,8 @@ dbinom(0, 6, 7/11) * 0.7 + dbinom(1, 6, 7/11) * 0.7 + dbinom(2, 6, 7/11) * 0.7
 # T = evento "esce Testa"
 # X = numero di palline verdi estratte
 
+# minore di 3 = 0, 1, 2
+
 # Applichiamo il teorema di Bayes:
 # P(T | X < 3) = [ P(X < 3 | T) * P(T) ] / P(X < 3)
 
@@ -93,3 +100,38 @@ den <- num +
 
 num / den
 #----------------------------------------------------------------------------#
+
+#Procedi con il seguente esperimento: lanci una moneta truccata che restituisce testa con probabilità 0.2. 
+#Se ottieni testa estrai con reimbussolamento 8 palline da un’urna che ne contiene 12, delle quali 5 sono bianche e 7 sono verdi. 
+#Se ottieni croce estrai, con reimbussolamento dalla stessa urna, 6 palline.
+
+#1  Con quale probabilità ottieni 3 palline verdi?
+#2  Con quale probabilità ottieni 7 palline verdi?
+#3  Con quale probabilità ottieni meno di () 3 palline verdi?
+#4  Con quale probabilità avevi ottenuto testa se hai estratto meno di () 3 palline verdi?
+
+# soluzione:
+
+# 1
+dbinom(3, 8, 7/12) * 0.2 + dbinom(3, 6, 7/12) * 0.8
+
+# 2
+dbinom(7, 8, 7/12) * 0.2 + dbinom(7, 6, 7/12) * 0.8
+
+# 3
+dbinom(0, 8, 7/12) * 0.2 + dbinom(1, 8, 7/12) * 0.2 + dbinom(2, 8, 7/12) * 0.2 +
+dbinom(0, 6, 7/12) * 0.8 + dbinom(1, 6, 7/12) * 0.8 + dbinom(2, 6, 7/12) * 0.8
+
+# 4
+num <- (dbinom(0, 8, 7/12) +
+        dbinom(1, 8, 7/12) +
+        dbinom(2, 8, 7/12)) * 0.2
+
+den <- num +
+       (dbinom(0, 6, 7/12) +
+        dbinom(1, 6, 7/12) +
+        dbinom(2, 6, 7/12)) * 0.8
+
+num / den
+#----------------------------------------------------------------------------#
+
