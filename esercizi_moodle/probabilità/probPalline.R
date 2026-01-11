@@ -1,41 +1,74 @@
-| Si hanno a disposizione 3 scatole. La scatola A contiene 12 palline rosse e 12 palline nere. La scatola B contiene 10 palline rosse e 30 palline nere. La scatola C contiene 3 palline rosse e 15 palline nere. Si estraggono tre palline in tre estrazioni consecutive con reintroduzione con la seguente procedura:
+#Domanda 143
+#Si hanno a disposizione 3 scatole. La scatola A contiene 12 palline rosse e 12 palline nere. La scatola B contiene 10 palline rosse e 30 palline nere. 
+#La scatola C contiene 3 palline rosse e 15 palline nere. 
+#Si estraggono tre palline in tre estrazioni consecutive con reintroduzione con la seguente procedura:
 
-- Prima estrazione: Si estrae una pallina dalla scatola A.
-- Seconda estrazione: Se all'estrazione precedente si è estratta una pallina rossa allora si estrae una pallina dalla scatola A. Se invece si è estratta una pallina nera si estrae una pallina dalla scatola B.
-- Terza estrazione: Se nell'estrazione precedente si è estratta una pallina rossa allora si estrae una pallina dalla scatola A. Se nella prima estrazione si è estratta una pallina rossa e nella seconda estrazione si è estratta una pallina nera, allora si estrae una pallina dalla scatola B. Infine, se nella prima e nella seconda estrazione si è estratta una pallina nera allora si estrae una pallina dalla scatola C.
+#Prima estrazione: Si estrae una pallina dalla scatola A.
+#Seconda estrazione: Se all'estrazione precedente si è estratta una pallina rossa allora si estrae una pallina dalla scatola A. Se invece si è estratta una pallina nera si estrae una pallina dalla scatola B.
+#Terza estrazione: Se nell'estrazione precedente si è estratta una pallina rossa allora si estrae una pallina dalla scatola A. Se nella prima estrazione si è estratta una pallina rossa e nella seconda estrazione si è estratta una pallina nera, allora si estrae una pallina dalla scatola B. Infine, se nella prima e nella seconda estrazione si è estratta una pallina nera allora si estrae una pallina dalla scatola C.
 
-!!! REGOLA: con reinserzione ⇒ ogni estrazione è indipendente dato la scatola scelta, quindi per una sequenza si moltiplica.
+# 1 Determinare la probabilità della sequenza (Rossa, Rossa, Rossa):
+# 2 Determinare la probabilità della sequenza (Nera, Nera, Nera):
+# 3 Determinare la probabilità che si estragga una pallina rossa sia alla seconda sia alla terza estrazione.:
 
-Determinare la probabilità della sequenza (Rossa, Rossa, Rossa):
-(1/2)^3 --> dato che per la prima scatola sono 12 e 12 (per un tot di 24) e poi così via dato che se R nella A, si estrae di nuovo dalla A (sempre 1/2 prob).
+# soluzione:
 
-Determinare la probabilità della sequenza (Nera, Nera, Nera):
-(1/2)*(3/4)*(5/6) --> da subito mi segno la prob per R e N per le 3 estrazioni e trovo semplicemente quei valori.
+#!!! REGOLA: con reinserzione ⇒ ogni estrazione è indipendente dato la scatola scelta, quindi per una sequenza si moltiplica.
 
-Determinare la probabilità che si estragga una pallina rossa sia alla seconda sia alla terza estrazione.:
-- per la prima, dato che non specificato --> R o N è uguale (1/2) e per tre posizioni (^3) dato che potrebbe avere conseguenze sulla seconda e anche sulla terza.
-- per la seconda estrazione, è 1/4 di prob per R, come stabilito fin da subito.
-- per la terza: molto semplicemente, se la seconda è R, da consegna, la terza si estrae dalla A (quindi 1/2 di prob).
-quindi risposta finale: (1/2)^3 + (1/2)*(1/4)*(1/2).
+# 1
+(1/2)^3 #--> dato che per la prima scatola sono 12 e 12 (per un tot di 24) e poi così via dato che se R nella A, si estrae di nuovo dalla A (sempre 1/2 prob).
 
-| Ci sono quattro scatole in un armadio: la scatola A ha 4 palline numerate da 1 a 4, la scatola B ha sei palline numerate da 1 a 6), le scatole C e D  hanno ambedue 8 palline numerate da 1 a 8. La tua amica prende segretamente e uniformemente a caso una scatola e ne estrae una pallina.
+#2
+(1/2)*(3/4)*(5/6) #--> da subito mi segno la prob per R e N per le 3 estrazioni e trovo semplicemente quei valori.
 
-1. Determinare la probabilità di ottenere un numero minore o uguale a 3 oppure 5 (=5).
-inizio considerando per ogni scatola (A, B, C, D) la prob. di ottenre {1, 2, 3, 5}.
-- in A la prob. è 3/4
-- in B la prob. è 4/6 => 2/3
-- in C la prob. è 4/8 => 1/2
-- in D come in C (1/2)
-tutti questi valori li sommo.
-E POI ultimo importante passaggio: MOLTIPLICO quel risultato * 1/4 (=la scatola scelta a caso, 1 su 4 essendo 4 le scatole). ez
+#3
+#per la prima, dato che non specificato --> R o N è uguale (1/2) e per tre posizioni (^3) dato che potrebbe avere conseguenze sulla seconda e anche sulla terza.
+#per la seconda estrazione, è 1/4 di prob per R, come stabilito fin da subito.
+#per la terza: molto semplicemente, se la seconda è R, da consegna, la terza si estrae dalla A (quindi 1/2 di prob).
+#quindi risposta finale: 
+(1/2)^3 + (1/2)*(1/4)*(1/2)
 
-2. Sai che è uscito 4 oppure 5. Qual è la probabilità che la pallina sia stata estratta dalla scatola C o dalla D?
+#----------------------------------------------------------------------------#
+
+#Domanda 144
+#Ci sono quattro scatole in un armadio: la scatola A ha 4 palline numerate da 1 a 4, la scatola B ha sei palline numerate da 1 a 6), 
+#le scatole C e D  hanno ambedue 8 palline numerate da 1 a 8. La tua amica prende segretamente e uniformemente a caso una scatola e ne estrae una pallina.
+
+#1 Determinare la probabilità di ottenere un numero minore o uguale a 3 oppure 5 (=5).
+#2 Sai che è uscito 4 oppure 5. Qual è la probabilità che la pallina sia stata estratta dalla scatola C o dalla D?
+#3 Sai che è uscito 4 oppure 5. Qual è la probabilità che la pallina sia stata estratta dalla scatola D?
+
+# soluzione:
+
+#1
+#inizio considerando per ogni scatola (A, B, C, D) la prob. di ottenre {1, 2, 3, 5}.
+#- in A la prob. è 3/4
+#- in B la prob. è 4/6 => 2/3
+#- in C la prob. è 4/8 => 1/2
+#- in D come in C (1/2)
+#tutti questi valori li sommo.
+#E POI ultimo importante passaggio: MOLTIPLICO quel risultato * 1/4 (=la scatola scelta a caso, 1 su 4 essendo 4 le scatole). ez
+(3/4 + 2/3 + 1/2 + 1/2) * (1/4)
+
+#2
 --> formuletta: (casi C o D che danno 4 o 5)/(tutti i casi che danno 4 o 5).
-E RICORDARE SEMPRE CHE BISOGNA MOLTICPLICARE PER LA PROBABILITA DELLA SCATOLA (1/4).
+E RICORDARE SEMPRE CHE BISOGNA MOLTIPLICARE PER LA PROBABILITA DELLA SCATOLA (1/4).
 quindi: {4, 5}:
 numeratore (C * 1/4 + D * 1/4): (1/4*1/4) + (1/4*1/4)
 denominatore ((A + B + C + D) *1/4): (1/4+1/3+1/4+1/4)*1/4
-> (1/8)/(13/48) = 0.4615
+(1/8)/(13/48)
+0.4615
+
+#3
+#simile al punto 2, ma ora solo per D.
+#quindi: {4, 5}:
+numeratore (D * 1/4): (1/4*1/4)
+denominatore ((A + B + C + D) *1/4): (1/4+1/3+1/4+1/4)*1/4
+(1/16)/(13/48)
+0.2308
+
+
+#----------------------------------------------------------------------------#
 
 | L'urna U_1 contiene una proporzione 0.3 di palline bianche e l'urna U_2 una proporzione 0.5 di palline bianche. Si estraggono con reimbussolamento 4 palline da U_1 e 6 da U_2. Tutte le palline estratte vengono sistemate in una terza urna U_3. Sia X la proporzione di palline bianche nella urna  U_3.
 Calcolare:
@@ -57,3 +90,34 @@ Siano date 3 urne e 4 palline indistinguibili. Si definisca l'evento A_j = l'urn
 2. la seconda urna resti vuota: uguale a 1.-
 3. almeno una urna resti vuota:
 4. due urne restano vuote se almeno una delle tre urne è vuota:
+
+
+#-----------------------------------------------------------------------------#
+#Domanda 109
+#Un'urna contiene 5 palline bianche, 6 nere e 4 rosse. Si estraggono 2 palline.
+
+#1 Si calcoli la probabilità che le due palline estratte siano dello stesso colore con estrazione in blocco.
+#2 Si calcoli la probabilità che le due palline estratte siano dello stesso colore se la prima viene rimessa nell'urna prima di estrarre la seconda.
+
+#NB: possibili funzioni di R utili: choose() factorial()
+
+# soluzione:
+
+#1 estrazione in blocco:
+# calcolo i modi per estrarre 2 bianche, 2 nere e 2 rosse e sommo il tutto.
+# poi divido per i modi totali di estrarre 2 palline da 15 (5+6+4).
+# 5 -> bianche
+# 6 -> nere
+# 4 -> rosse
+# 15 -> palline totali
+# 2 -> estratte
+(choose(5,2) + choose(6,2) + choose(4,2)) / choose(15,2)
+
+#2 estrazione con reimmissione:
+# calcolo la prob di estrarre 2 bianche, 2 nere e 2 rosse e sommo il tutto.
+# 5/15 -> prob di estrarre una bianca
+# 6/15 -> prob di estrarre una nera
+# 4/15 -> prob di estrarre una rossa
+( (5/15)^2 + (6/15)^2 + (4/15)^2 )
+
+#----------------------------------------------------------------------------#
