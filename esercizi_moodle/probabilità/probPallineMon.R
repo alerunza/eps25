@@ -16,7 +16,7 @@ choose(10,2) * choose(10,1) / choose(20, 3)
 
 #2
 #P(BB | C)
-opzione 1: dbinom(2.5, 5/20)
+opzione 1: dbinom(2, 5, 5/20)
 opzione 2: choose(5,2)*(1/4)^2*(3/4)^3
 #opzione 2 spegazione:
 # - sceglie 2/5 estrazioni
@@ -30,7 +30,12 @@ opzione 2: choose(5,2)*(1/4)^2*(3/4)^3
 # 0.5 è 1/2 di prob per T o C.
 # poi umero di modi per scegliere 2 palline bianche dalle 10 bianche dell’urna A.
 
-#4 
+#4
+P(T|BB) = P(BB|T)P(T) / P(BB)
+num <- (choose(10,2) * choose(10,1) / choose(20, 3)) * 0.5
+den <- num + (choose(5,2)*(1/4)^2*(3/4)^3) * 0.5
+num / den
+# bayes
 
 #----------------------------------------------------------------------------#
 
@@ -189,3 +194,5 @@ den <- num +
 
 num / den
 #----------------------------------------------------------------------------#
+
+#Domanda 
