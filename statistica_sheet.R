@@ -211,3 +211,91 @@ summary(mod)$coefficients["x", "Pr(>|t|)"]
 
 # - Proporzione con filtro: denominatore è solo il sottoinsieme!
 #   mean(var[filtro] == valore)
+
+############################################################
+# Intervalli di confidenza (conf.level) — esempi
+############################################################
+
+# conf.level = livello di confidenza dell’intervallo
+# valori tipici d’esame:
+# 0.90  -> 90%
+# 0.95  -> 95% (default)
+# 0.99  -> 99%
+
+############################
+# 1) IC per la MEDIA (una variabile numerica)
+############################
+
+# IC al 95% (default)
+t.test(dati$x)$conf.int
+
+# IC al 90%
+t.test(dati$x, conf.level = 0.90)$conf.int
+
+# IC al 99% (molto usato negli esercizi EPS)
+t.test(dati$x, conf.level = 0.99)$conf.int
+
+# Arrotondamento
+round(t.test(dati$x, conf.level = 0.99)$conf.int, 4)
+
+############################
+# 2) IC per la MEDIA di gruppi diversi (due IC separati)
+############################
+
+# Gruppo A
+IC_A <- t.test(dati$x[dati$gruppo == "A"], conf.level = 0.99)$conf.int
+
+# Gruppo B
+IC_B <- t.test(dati$x[dati$gruppo == "B"], conf.level = 0.99)$conf.int
+
+round(IC_A, 4)
+round(IC_B, 4)
+
+# Interpretazione EPS:
+# - IC sovrapposti   -> non posso dire che le medie sono diverse
+# - IC non sovrapposti -> le medie sono diverse
+
+############################
+# 3) IC per la MEDIA delle DIFFERENZE (appaiati PRE/POST)
+############################
+
+# IC al 95%
+t.test(dati$PRE, dati$POST, paired = TRUE)$conf.int
+
+# IC al 99%
+t.test(dati$PRE, dati$POST, paired = TRUE, conf.level = 0.99)$conf.int
+
+# Se l’IC NON contiene 0 -> differenza significativa
+# Se l’IC contiene 0     -> differenza NON significativa
+
+############################
+# 4) IC per una PROPORZIONE (binom.test)
+############################
+
+# x successi su n
+binom.test(x, n, conf.level = 0.95)$conf.int
+binom.test(x, n, conf.level = 0.99)$conf.int
+
+# Interpretazione:
+# - se p0 è FUORI dall’IC -> rifiuto H0: p = p0
+# - se p0 è DENTRO l’IC  -> non rifiuto H0
+
+############################
+# 5) IC per una PROPORZIONE (prop.test)
+############################
+
+prop.test(x, n, conf.level = 0.95)$conf.int
+prop.test(x, n, conf.level = 0.99)$conf.int
+
+############################
+# 6) Mini–regole da ricordare all’esame
+############################
+
+# - conf.level più alto -> IC più largo
+# - conf.level più basso -> IC più stretto
+# - IC che contiene il valore nullo (0 per differenze, p0 per proporzioni)
+#   -> non significativo
+# - IC che NON contiene il valore nullo
+#   -> significativo
+
+############################################################
