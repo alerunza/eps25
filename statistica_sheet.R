@@ -33,6 +33,8 @@ table(dati$variabile)
 
 # Frequenze relative
 prop.table(table(dati$variabile))
+#oppure
+valore di interesse/tot.osservazioni
 
 # Proporzione di una categoria (metodo super-rapido)
 # (mean(TRUE/FALSE) = proporzione di TRUE)
