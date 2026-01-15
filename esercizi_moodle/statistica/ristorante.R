@@ -40,3 +40,20 @@ freq_veg <- sum(ristorante$fascia_oraria[ristorante$categoria_piatto == "Piatti 
 [1] 34
 
 barplot(table(ristorante$categoria_piatto))
+
+tab <- table(ristorante$categoria_piatto)
+
+test <- chisq.test(tab, p = rep(1/3, 3))
+
+round(test$p.value, 4)
+[1] 0
+
+test$expected
+   Piatti di carne 
+               106 
+   Piatti di pesce 
+               106 
+Piatti vegetariani 
+               106 
+
+#le frequenze attese sono tutte uguali, quindi cochran è soddisfatto
